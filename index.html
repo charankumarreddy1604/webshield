@@ -1,0 +1,100 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebShield - Security Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2>🛡 WebShield</h2>
+    <span>WEBSITE SECURITY ANALYZER</span>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <p class="tag">CYBERSECURITY TOOL</p>
+        <h1>Website Security <span>Header Analyzer</span></h1>
+        <p>Analyze HTTPS, security headers, security scores and potential configuration gaps.</p>
+    </section>
+
+    <section class="scan-box">
+        <label for="websiteUrl">Enter Website URL</label>
+        <div class="input-group">
+            <input id="websiteUrl" type="text"
+                   placeholder="example.com">
+            <button id="scanButton" onclick="scanWebsite()">
+                Analyze Website
+            </button>
+        </div>
+        <p class="hint">Only scan websites you own or have permission to test.</p>
+        <p id="errorMessage" class="error"></p>
+    </section>
+
+    <section id="results" hidden>
+        <h2 class="section-title">Security Report</h2>
+
+        <div class="cards">
+            <div class="card">
+                <p>Security Score</p>
+                <h2 id="scoreValue">0/7</h2>
+                <div class="progress">
+                    <div id="scoreBar"></div>
+                </div>
+                <small id="scorePercent">0%</small>
+            </div>
+
+            <div class="card">
+                <p>Security Level</p>
+                <h2 id="riskValue">—</h2>
+                <small id="riskDescription">Scan result</small>
+            </div>
+
+            <div class="card">
+                <p>HTTPS Status</p>
+                <h2 id="httpsValue">—</h2>
+                <small id="httpsDescription">Connection security</small>
+            </div>
+
+            <div class="card">
+                <p>HTTP Status</p>
+                <h2 id="httpValue">—</h2>
+                <small id="serverValue">Server: —</small>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3>Security Headers</h3>
+                    <span id="headerCount">0/6</span>
+                </div>
+                <div id="headerList"></div>
+            </div>
+
+            <div class="panel">
+                <h3>Recommendations</h3>
+                <div id="recommendationList"></div>
+            </div>
+        </div>
+
+        <div class="panel target-panel">
+            <h3>Target Details</h3>
+            <p>Requested URL: <a id="targetUrl" href="#"></a></p>
+            <p>Final URL: <a id="finalUrl" href="#"></a></p>
+            <p class="hint">
+                Browser requests may be blocked by CORS. For reliable
+                scanning, connect this interface to the Python backend.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>WebShield | Website Security Header Analyzer</footer>
+<script src="script.js"></script>
+</body>
+</html>
+```
